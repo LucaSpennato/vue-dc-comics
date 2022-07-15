@@ -3,9 +3,7 @@
     <nav class="navbar navbar-expand-lg p-0">
       <div class="container-fluid d-flex align-items-center">
             
-        <div class="p-3">
-            <a href="#"><img src="../assets/img/dc-logo.png" alt="dc-logo"/></a>
-        </div>
+        <a href="#"><img src="../assets/img/dc-logo.png" alt="dc-logo"/></a>
 
         <ul>
             <li>
@@ -65,7 +63,6 @@ export default {
 @import "../styles/variables.scss";
 
 header{
-// height: 6rem;
     img {
     width: 4.5rem;
     }

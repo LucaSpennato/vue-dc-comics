@@ -1,20 +1,26 @@
 <template>
   <div id="app">
+
     <div class="container-fluid">
-      <div class="container">
-          <div class="row">
-            <Header/>
-          </div>
+      <div class="container p-3">
+          <Header/>
       </div>
     </div>
+
     <div class="container-fluid bg-MainFix">
-      <div class="container">
-          <div class="row">
-            <MainContent/>
-          </div>
+      <div class="container p-3">
+          <MainContent/>
       </div>
     </div>
+
+    <div class="container-fluid bg-footer-img">
+      <div class="container">
+        <Footer/>
+      </div>
+    </div>
+
   </div>
+
 </template>
 
 <script>
@@ -37,6 +43,12 @@ export default {
 
 .bg-MainFix{
   background-color: $mainContentBgColor;
-  } 
+}
+
+.bg-footer-img{
+  background-image: url(./assets/img/footer-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 </style>
