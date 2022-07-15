@@ -78,7 +78,7 @@ header{
         }
         a{
             color: black;
-            padding: 3.1rem 0;
+            padding: 3.2rem 0;
             margin: 0 1rem;
             text-transform: uppercase;
             text-decoration: none;
@@ -91,7 +91,7 @@ header{
                 content: '\0020';
                 position: absolute;
                 width: 100%;
-                border-top: 5px solid $mainTextColor;
+                border-top: 5px solid $HeaderTextColor;
                 // background-color: $mainTextColor;
                 text-align: center;
                 bottom: 0;
@@ -99,11 +99,11 @@ header{
             }
 
             &.active_el{
-                color: $mainTextColor;
+                color: $HeaderTextColor;
             }
             
             &:hover{
-                color: $mainTextColor;
+                color: $HeaderTextColor;
             }
         }
     }
