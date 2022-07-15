@@ -1,30 +1,43 @@
 <template>
-  <header class="py-3">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
+  <header>
+    <nav class="navbar navbar-expand-lg p-0">
+      <div class="container-fluid d-flex align-items-center">
             
-        <a href="#"><img src="../assets/img/dc-logo.png" alt=""/></a>
+        <div class="p-3">
+            <a href="#"><img src="../assets/img/dc-logo.png" alt="dc-logo"/></a>
+        </div>
 
         <ul>
             <li>
-                <a class="active_el" href="#">Home</a>
+                <a class="active_el" href="#">characters</a>
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="#">comics</a>
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="#">movies</a>
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="#">tv</a>
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="#">games</a>
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="#">collectibles</a>
             </li>
-            
+            <li>
+                <a href="#">videos</a>
+            </li>
+            <li>
+                <a href="#">fans</a>
+            </li>
+            <li>
+                <a href="#">news</a>
+            </li>
+            <li>
+                <a href="#">shop</a>
+            </li>
         </ul>
 
 
@@ -36,45 +49,63 @@
 <script>
 export default {
   name: "Header",
+  data(){
+        return{
+
+        };
+    },
+    methods: {
+        // TODO aggiungi prevent al click
+        // TODO crea un hamb menu magari
+    },
 };
 </script>
 
-<style lang="scss" scoped>
-@import "~bootstrap/scss/bootstrap.scss";
+<style lang="scss">
+@import "../styles/variables.scss";
 
+header{
+// height: 6rem;
     img {
-    width: 4rem;
+    width: 4.5rem;
     }
     ul{
         list-style: none;
 
         li{
-            display: inline;
+            display: inline-block;
+            position: relative;
         }
         a{
             color: black;
-            padding: 2rem 0;
+            padding: 3.1rem 0;
             margin: 0 1rem;
+            text-transform: uppercase;
             text-decoration: none;
             position: relative;
+            font-weight: 500;
+            font-size: .8rem;
+            line-height: 120%;
 
-            &.active_el{
-                color: blue;
-            }
             &.active_el::after{
                 content: '\0020';
                 position: absolute;
                 width: 100%;
-                border: 3px solid red;
-                background-color: red;
+                border-top: 5px solid $mainTextColor;
+                // background-color: $mainTextColor;
                 text-align: center;
                 bottom: 0;
                 left: 0;
             }
+
+            &.active_el{
+                color: $mainTextColor;
+            }
+            
             &:hover{
-                color: orange;
+                color: $mainTextColor;
             }
         }
     }
-
+}
 </style>
