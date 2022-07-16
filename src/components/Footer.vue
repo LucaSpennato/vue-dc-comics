@@ -4,9 +4,9 @@
       <section class="foot-top-section">
         <div class="container">
           <div class="row">
-            <div class="row col-6 col-6 p-4">
+            <div class="row col-6 p-5">
 
-                <div class="col-4 p-0 d-inline"
+                <div class="col-4 d-inline"
                 v-for="(list, index) in footerNavLinks"
                 :key="index">
                     <ul>
@@ -27,31 +27,31 @@
     <section class="bottom-section">
       <div class="container-fluid p-0 bg-dark">
         <div class="container">
-          <div class="row p-4 justify-content-between">
+          <div class="row p-4 justify-content-between align-items-center">
             <div class="col-2">
-              <button class="btn btn-outline-primary text-light">
+              <a class="btn btn-outline-primary text-light p-2">
                 SIGN-UP NOW!
-              </button>
+              </a>
             </div>
             <div class="col-4">
-              <h5>follow us</h5>
-              <div class="icon-wrapper">
-                <a href="#"
-                  ><img src="../assets/img/footer-facebook.png" alt=""
-                /></a>
-                <a href="#"
-                  ><img src="../assets/img/footer-twitter.png" alt=""
-                /></a>
-                <a href="#"
-                  ><img src="../assets/img/footer-youtube.png" alt=""
-                /></a>
-                <a href="#"
-                  ><img src="../assets/img/footer-pinterest.png" alt=""
-                /></a>
-                <a href="#"
-                  ><img src="../assets/img/footer-periscope.png" alt=""
-                /></a>
-              </div>
+                <ul class="d-flex justify-content-center align-items-center">
+                    <li><h5 class="m-0">follow us</h5></li>
+                    <li>
+                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
+                    </li>
+                </ul>
             </div>
           </div>
         </div>
@@ -119,19 +119,19 @@ export default {
                             url: '#',
                         },
                         {
-                            text: 'MAD Magazine',
+                            text: 'MAD magazine',
                             url: '#',
                         },
                         {
-                            text: 'Dc Kids',
+                            text: 'Dc kids',
                             url: '#',
                         },
                         {
-                            text: 'DC Universe',
+                            text: 'DC universe',
                             url: '#',
                         },
                         {
-                            text: 'DC Power Visa',
+                            text: 'DC power visa',
                             url: '#',
                         },
                     ],
@@ -140,47 +140,47 @@ export default {
                     linksGroup: 'dc',
                     links: [
                         {
-                            text: 'Terms Of Use',
+                            text: 'terms of use',
                             url: '#',
                         },
                         {
-                            text: 'Privacy policy (new)',
+                            text: 'privacy policy (new)',
                             url: '#',
                         },
                         {
-                            text: 'Ad Choices',
+                            text: 'ad choices',
                             url: '#',
                         },
                         {
-                            text: 'Advertising',
+                            text: 'advertising',
                             url: '#',
                         },
                         {
-                            text: 'Jobs',
+                            text: 'jobs',
                             url: '#',
                         },
                         {
-                            text: 'Subscriptions',
+                            text: 'subscriptions',
                             url: '#',
                         },
                         {
-                            text: 'Talent Workshops',
+                            text: 'talent workshops',
                             url: '#',
                         },
                         {
-                            text: 'CPSC Certificates',
+                            text: 'CPSC certificates',
                             url: '#',
                         },
                         {
-                            text: 'Ratings',
+                            text: 'ratings',
                             url: '#',
                         },
                         {
-                            text: 'Shop Help',
+                            text: 'shop help',
                             url: '#',
                         },
                         {
-                            text: 'Conctact Us',
+                            text: 'conctact us',
                             url: '#',
                         },
                         
@@ -190,17 +190,23 @@ export default {
                     linksGroup: 'shop',
                     links: [
                         {
-                            text: 'Shop DC',
+                            text: 'shop DC',
                             url: '#',
                         },
                         {
-                            text: 'Shop DC Collectibles',
+                            text: 'shop DC collectibles',
                             url: '#',
                         },
                     ],
                 },
                 
-           ],    
+           ],
+           
+           footerIconLinks: [
+            {
+
+            }
+           ],
         };
     },    
 };
@@ -221,6 +227,7 @@ footer {
   }
   ul {
     padding: 0;
+    margin: 0;
     list-style: none;
   }
   li {
@@ -230,6 +237,7 @@ footer {
     text-decoration: none;
     color: gray;
     font-size: 0.7rem;
+    text-transform: capitalize;
 
     &:hover {
       color: $primaryTextColor;
@@ -244,17 +252,12 @@ footer {
   .bottom-section {
     h5 {
       color: $primaryTextColor;
-      display: inline-block;
-      margin-right: 0.3rem;
     }
 
-    .icon-wrapper {
-      display: inline-block;
-
-      a {
-        padding: 0 0.5rem;
-      }
+    a {
+    padding: 0 0.5rem;
     }
+    
   }
 }
 </style>
