@@ -36,20 +36,13 @@
             <div class="col-4">
                 <ul class="d-flex justify-content-center align-items-center">
                     <li><h5 class="m-0">follow us</h5></li>
-                    <li>
-                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/footer-facebook.png" alt=""/></a>
+                    <li 
+                    v-for="(iconLink, index) in footerIconLinks"
+                    :key="index">
+                        <a :href="iconLink.url">
+                            <img 
+                            :src="iconsPath(iconLink.icon)"
+                            :alt="iconLink.icon"/></a>
                     </li>
                 </ul>
             </div>
@@ -204,11 +197,33 @@ export default {
            
            footerIconLinks: [
             {
-
-            }
+                icon: 'facebook',
+                url: '#',
+            },
+            {
+                icon: 'twitter',
+                url: '#',
+            },
+            {
+                icon: 'youtube',
+                url: '#',
+            },
+            {
+                icon: 'pinterest',
+                url: '#',
+            },
+            {
+                icon: 'periscope',
+                url: '#',
+            },
            ],
         };
-    },    
+    },
+    methods: {
+        iconsPath: function (element){
+           return '../assets/img/footer-' + element + '.png';
+        }
+    }    
 };
 </script>
 
@@ -233,7 +248,7 @@ footer {
   li {
     line-height: 100%;
   }
-  li a {
+  .foot-top-section li a {
     text-decoration: none;
     color: gray;
     font-size: 0.7rem;
