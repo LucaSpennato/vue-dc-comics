@@ -256,7 +256,7 @@ footer {
     text-transform: capitalize;
 
     &:hover {
-      color: $primaryTextColor;
+      color: $primaryColor;
     }
   }
 
@@ -267,7 +267,7 @@ footer {
   }
   .bottom-section {
     h5 {
-      color: $primaryTextColor;
+      color: $primaryColor;
     }
 
     a {

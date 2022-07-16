@@ -11,7 +11,7 @@
             :key="index">
                 <a :href="link.url"
                 :class="{'active_el' : link.isActive === true }"
-                @click="navActiveOnClick(index)"
+                @click.prevent="navActiveOnClick(index)"
                  >{{ link.text }}</a>
             </li>
         </ul>
@@ -82,14 +82,11 @@ export default {
         };
     },
     methods: {
-        // TODO aggiungi prevent al click
         // TODO crea un hamb menu magari
         navActiveOnClick: function(index){
-        
             this.DcComicsNavLinks.forEach(element => {
             element.isActive = false;
             });
-
             if(this.DcComicsNavLinks[index].isActive === false){
                 this.DcComicsNavLinks[index].isActive = true;
             }
@@ -127,18 +124,18 @@ header{
                 content: '\0020';
                 position: absolute;
                 width: 100%;
-                border-top: 5px solid $primaryTextColor;
+                border-top: 5px solid $primaryColor;
                 text-align: center;
                 bottom: 0;
                 left: 0;
             }
 
             &.active_el{
-                color: $primaryTextColor;
+                color: $primaryColor;
             }
             
             &:hover{
-                color: $primaryTextColor;
+                color: $primaryColor;
             }
         }
     }
