@@ -1,137 +1,22 @@
 <template>
   <footer>
     <div class="container-fluid p-0 bg-footer-img">
-      <section>
+      <section class="foot-top-section">
         <div class="container">
           <div class="row">
-            <div class="row col-6 p-4">
-              <div class="col-4 p-0">
-                <ul>
-                  <h5>dc comics</h5>
-                  <li>
-                    <a href="#">characters</a>
-                  </li>
-                  <li>
-                    <a href="#">comics</a>
-                  </li>
-                  <li>
-                    <a href="#">movies</a>
-                  </li>
-                  <li>
-                    <a href="#">tv</a>
-                  </li>
-                  <li>
-                    <a href="#">games</a>
-                  </li>
-                  <li>
-                    <a href="#">collectibles</a>
-                  </li>
-                  <li>
-                    <a href="#">videos</a>
-                  </li>
-                  <li>
-                    <a href="#">fans</a>
-                  </li>
-                  <li>
-                    <a href="#">news</a>
-                  </li>
-                  <li>
-                    <a href="#">shop</a>
-                  </li>
-                </ul>
+            <div class="row col-6 col-6 p-4">
 
-                <ul>
-                  <h5>shop</h5>
-                  <li>
-                    <a href="#">Shop DC</a>
-                  </li>
-                  <li>
-                    <a href="#">Shop DC Collectibles</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col-4 p-0">
-                <ul>
-                  <h5>dc</h5>
-
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col-4 p-0">
-                <ul>
-                  <h5>sites</h5>
-
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                  <li>
-                    <a href="#">termsasdasdasdasdasasdsa</a>
-                  </li>
-                </ul>
-              </div>
+                <div class="col-4 p-0 d-inline"
+                v-for="(list, index) in footerNavLinks"
+                :key="index">
+                    <ul>
+                        <h5>{{ list.linksGroup }}</h5>
+                        <li v-for="(link, index) in footerNavLinks[index].links"
+                        :key="index">
+                            <a :href="link.url">{{ link.text }}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="col-6 bg-logo"></div>
           </div>
@@ -178,6 +63,146 @@
 <script>
 export default {
   name: "FooterContent",
+  data(){
+        return{
+           footerNavLinks: [
+                {
+                    linksGroup: 'dc comics',
+                    links: [
+                        {
+                            text: 'characters',
+                            url: '#',
+                        },
+                        {
+                            text: 'comics',
+                            url: '#',
+                        },
+                        {
+                            text: 'movies',
+                        url: '#',
+                        },
+                        {
+                            text: 'tv',
+                            url: '#',
+                        },
+                        {
+                            text: 'games',
+                            url: '#',
+                        },
+                        {
+                            text: 'collectibles',
+                            url: '#',
+                        },
+                        {
+                            text: 'videos',
+                            url: '#',
+                        },
+                        {
+                            text: 'fans',
+                            url: '#',
+                        },
+                        {
+                            text: 'news',
+                            url: '#',
+                        },
+                        {
+                            text: 'shop',
+                            url: '#',
+                        },
+                    ],
+                },
+                {
+                    linksGroup: 'sites',
+                    links: [
+                        {
+                            text: 'DC',
+                            url: '#',
+                        },
+                        {
+                            text: 'MAD Magazine',
+                            url: '#',
+                        },
+                        {
+                            text: 'Dc Kids',
+                            url: '#',
+                        },
+                        {
+                            text: 'DC Universe',
+                            url: '#',
+                        },
+                        {
+                            text: 'DC Power Visa',
+                            url: '#',
+                        },
+                    ],
+                },
+                {
+                    linksGroup: 'dc',
+                    links: [
+                        {
+                            text: 'Terms Of Use',
+                            url: '#',
+                        },
+                        {
+                            text: 'Privacy policy (new)',
+                            url: '#',
+                        },
+                        {
+                            text: 'Ad Choices',
+                            url: '#',
+                        },
+                        {
+                            text: 'Advertising',
+                            url: '#',
+                        },
+                        {
+                            text: 'Jobs',
+                            url: '#',
+                        },
+                        {
+                            text: 'Subscriptions',
+                            url: '#',
+                        },
+                        {
+                            text: 'Talent Workshops',
+                            url: '#',
+                        },
+                        {
+                            text: 'CPSC Certificates',
+                            url: '#',
+                        },
+                        {
+                            text: 'Ratings',
+                            url: '#',
+                        },
+                        {
+                            text: 'Shop Help',
+                            url: '#',
+                        },
+                        {
+                            text: 'Conctact Us',
+                            url: '#',
+                        },
+                        
+                    ],
+                },
+                {    
+                    linksGroup: 'shop',
+                    links: [
+                        {
+                            text: 'Shop DC',
+                            url: '#',
+                        },
+                        {
+                            text: 'Shop DC Collectibles',
+                            url: '#',
+                        },
+                    ],
+                },
+                
+           ],    
+        };
+    },    
 };
 </script>
 
@@ -205,6 +230,10 @@ footer {
     text-decoration: none;
     color: gray;
     font-size: 0.7rem;
+
+    &:hover {
+      color: $primaryTextColor;
+    }
   }
 
   section .bg-logo {
@@ -216,15 +245,15 @@ footer {
     h5 {
       color: $primaryTextColor;
       display: inline-block;
-      margin-right: .3rem;
+      margin-right: 0.3rem;
     }
 
-    .icon-wrapper{
-        display: inline-block;
-        
-        a{
-            padding: 0 .5rem;
-        }
+    .icon-wrapper {
+      display: inline-block;
+
+      a {
+        padding: 0 0.5rem;
+      }
     }
   }
 }
