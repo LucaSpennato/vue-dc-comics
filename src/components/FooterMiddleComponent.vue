@@ -11,7 +11,8 @@
                         <h5>{{ list.linksGroup }}</h5>
                         <li v-for="(link, index) in footerNavLinks[index].links"
                         :key="index">
-                            <a :href="link.url">{{ link.text }}</a>
+                            <a :href="link.url"
+                            @click.prevent>{{ link.text }}</a>
                         </li>
                     </ul>
                 </div>

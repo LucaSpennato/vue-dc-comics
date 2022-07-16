@@ -1,20 +1,8 @@
 <template>
   <div id="app">
-
-    <div class="container-fluid">
-      <div class="container p-3">
-          <Header/>
-      </div>
-    </div>
-
-    <div class="container-fluid bg-MainFix">
-      <div class="container p-3">
-          <MainContent/>
-      </div>
-    </div>
-
-      <FooterComponent/>
-
+    <Header/>
+    <MainContent/>
+    <FooterComponent/>
   </div>
 
 </template>
@@ -38,7 +26,5 @@ export default {
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./styles/variables.scss";
 
-.bg-MainFix{
-  background-color: $mainContentBgColor;
-}
+
 </style>

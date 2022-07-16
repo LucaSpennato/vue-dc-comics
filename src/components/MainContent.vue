@@ -1,7 +1,9 @@
 <template>
   <main>
-    <div class="p-5">
-        --> Content goes here 
+    <div class="container">
+      <div class="p-5">
+          --> Content goes here
+      </div>
     </div>
   </main>
 </template>
@@ -18,5 +20,6 @@ export default {
         color: white;
         font-weight: bold;
         font-size: 1.5rem;
+        background-color: $mainContentBgColor;
     }
 </style>

@@ -12,7 +12,7 @@
 
             <ul class="d-flex justify-content-center align-items-center">
 
-              <li><h5 class="m-0">follow us</h5></li>
+              <li><h5 class="m-0 me-2">follow us</h5></li>
 
               <li v-for="(iconLink, index) in footerIconLinks" :key="index">
                 <a :href="iconLink.url" target="_blank">
@@ -73,6 +73,10 @@ export default {
 @import "../styles/variables.scss";
 
 .bottom-section{
+    h5{
+      color: $primaryColor;
+      font-weight: bold;
+    }
     ul {
     padding: 0;
     margin: 0;
