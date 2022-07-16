@@ -1,24 +1,35 @@
 <template>
       <section class="foot-top-section p-0 bg-footer-img">
+
         <div class="container">
+
           <div class="row">
+
             <div class="row col-6 p-5">
 
                 <div class="col-4 d-inline"
                 v-for="(list, index) in footerNavLinks"
                 :key="index">
+
                     <ul>
                         <h5>{{ list.linksGroup }}</h5>
+
                         <li v-for="(link, index) in footerNavLinks[index].links"
                         :key="index">
                             <a :href="link.url"
                             @click.prevent>{{ link.text }}</a>
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
+            <!-- logo on right -->
             <div class="col-6 bg-logo"></div>
-          </div>
+            </div>
+
         </div>
       </section>
 </template>
@@ -164,8 +175,7 @@ export default {
                 },
                 
            ],
-           
-           
+  
         };
     },
 };

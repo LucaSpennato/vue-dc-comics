@@ -3,9 +3,10 @@
     <div class="container p-3">
       <nav class="navbar navbar-expand-lg p-0">
         <div class="container-fluid d-flex align-items-center">
+
           <a href="#"><img src="../assets/img/dc-logo.png" alt="dc-logo" /></a>
 
-          <ul>
+          <ul class="d-none d-lg-block">
             <li v-for="(link, index) in DcComicsNavLinks" :key="index">
               <a
                 :href="link.url"
@@ -15,6 +16,23 @@
               >
             </li>
           </ul>
+
+          <div class="hambuger-menu d-block d-lg-none">
+            <button class="btn btn-primary" @click="hamburgerMenu()">X</button>
+
+            <ul  
+            :class="{'d-none  bg-danger' : isHambOpen === false,}">
+            <li v-for="(link, index) in DcComicsNavLinks" :key="index">
+              <a
+                :href="link.url"
+                :class="{ active_el: link.isActive === true }"
+                @click.prevent="navActiveOnClick(index)"
+                >{{ link.text }}</a
+              >
+            </li>
+          </ul>
+          </div>
+
         </div>
       </nav>
     </div>
@@ -26,6 +44,7 @@ export default {
   name: "Header",
   data() {
     return {
+      isHambOpen: false,
       DcComicsNavLinks: [
         {
           text: "characters",
@@ -82,6 +101,10 @@ export default {
   },
   methods: {
     // TODO crea un hamb menu magari
+    hamburgerMenu: function(){
+      this.isHambOpen = !this.isHambOpen;
+    },
+
     navActiveOnClick: function (index) {
       this.DcComicsNavLinks.forEach((element) => {
         element.isActive = false;

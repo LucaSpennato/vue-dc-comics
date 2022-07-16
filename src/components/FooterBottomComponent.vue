@@ -9,7 +9,6 @@
           </div>
 
           <div class="col-4">
-
             <ul class="d-flex justify-content-center align-items-center">
 
               <li><h5 class="m-0 me-2">follow us</h5></li>
@@ -19,11 +18,10 @@
                   <img :src="iconsPath(iconLink)" :alt="iconLink.icon"
                 /></a>
               </li>
-
             </ul>
 
           </div>
-
+  
         </div>
 
       </div>
