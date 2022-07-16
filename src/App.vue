@@ -13,13 +13,7 @@
       </div>
     </div>
 
-    <section class="upper-section">
-      <div class="container p-3">
-        <FooterUpperComponent/>
-      </div>
-    </section>
-
-      <Footer/>
+      <FooterComponent/>
 
   </div>
 
@@ -28,16 +22,14 @@
 <script>
 import Header from './components/Header.vue';
 import MainContent from './components/MainContent.vue'
-import FooterUpperComponent from './components/FooterUpperComponent.vue'
-import Footer from './components/Footer.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     MainContent,
-    FooterUpperComponent,
-    Footer,
+    FooterComponent,
   }
 }
 </script>
@@ -48,8 +40,5 @@ export default {
 
 .bg-MainFix{
   background-color: $mainContentBgColor;
-}
-.upper-section{
-  background-color: $primaryColor;
 }
 </style>
