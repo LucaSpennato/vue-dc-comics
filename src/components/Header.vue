@@ -2,13 +2,15 @@
   <header>
     <div class="container p-3">
       <nav class="navbar navbar-expand-lg p-0">
-        <div class="container-fluid d-flex align-items-center">
+        <div class="row container-fluid d-flex">
 
-          <a href="#"><img src="../assets/img/dc-logo.png" alt="dc-logo" /></a>
+          <div class="col-6 col-lg-1">
+            <a href="#"><img src="../assets/img/dc-logo.png" alt="dc-logo" /></a>
+          </div>
 
-          <ul class="d-none d-lg-block">
+          <ul class="col-11 d-none d-lg-block text-end">
             <li v-for="(link, index) in DcComicsNavLinks" :key="index">
-              <a
+              <a class="py-lg-5 px-lg-2 mx-lg-1"
                 :href="link.url"
                 :class="{ active_el: link.isActive === true }"
                 @click.prevent="navActiveOnClick(index)"
@@ -17,20 +19,28 @@
             </li>
           </ul>
 
-          <div class="hambuger-menu d-block d-lg-none">
-            <button class="btn btn-primary" @click="hamburgerMenu()">X</button>
+          <!-- hamburger menu -->
+          <div class="col-6 d-block d-lg-none text-end">
+            <button class="btn btn-primary " @click="hamburgerMenu()">X</button>
+          </div>
+          <div class="hambuger-menu d-block d-lg-none"
+          :class="{'d-none' : isHambOpen === false}">
 
-            <ul  
-            :class="{'d-none  bg-danger' : isHambOpen === false,}">
-            <li v-for="(link, index) in DcComicsNavLinks" :key="index">
-              <a
+            <div class="col-12">
+              <ul class="text-center">
+              <li
+              v-for="(link, index) in DcComicsNavLinks" 
+              :key="index"
+              class="d-block p-2">
+              <a class="p-0"
                 :href="link.url"
-                :class="{ active_el: link.isActive === true }"
+                :class="{ active_side_el: link.isActive === true }"
                 @click.prevent="navActiveOnClick(index)"
                 >{{ link.text }}</a
               >
             </li>
           </ul>
+            </div>
           </div>
 
         </div>
@@ -133,8 +143,8 @@ header {
     }
     a {
       color: black;
-      padding: 3.2rem 0;
-      margin: 0 1rem;
+      // padding: 3.2rem 0;
+      // margin: 0 1rem;
       text-transform: uppercase;
       text-decoration: none;
       position: relative;
@@ -148,11 +158,21 @@ header {
         width: 100%;
         border-top: 5px solid $primaryColor;
         text-align: center;
-        bottom: 0;
+        bottom: -2.5px;
         left: 0;
       }
+      &.active_side_el::after {
+        content: "\0020";
+        position: absolute;
+        width: 1.5rem;
+        border-top: 5px solid $primaryColor;
+        text-align: center;
+        transform: rotate(90deg);
+        bottom: 40%;
+        right: 100%;
+      }
 
-      &.active_el {
+      &.active_el, &.active_side_el {
         color: $primaryColor;
       }
 
