@@ -88,19 +88,18 @@ header{
                 content: '\0020';
                 position: absolute;
                 width: 100%;
-                border-top: 5px solid $HeaderTextColor;
-                // background-color: $mainTextColor;
+                border-top: 5px solid $primaryTextColor;
                 text-align: center;
                 bottom: 0;
                 left: 0;
             }
 
             &.active_el{
-                color: $HeaderTextColor;
+                color: $primaryTextColor;
             }
             
             &:hover{
-                color: $HeaderTextColor;
+                color: $primaryTextColor;
             }
         }
     }

@@ -13,11 +13,7 @@
       </div>
     </div>
 
-    <div class="container-fluid bg-footer-img">
-      <div class="container">
-        <Footer/>
-      </div>
-    </div>
+      <Footer/>
 
   </div>
 
@@ -44,11 +40,4 @@ export default {
 .bg-MainFix{
   background-color: $mainContentBgColor;
 }
-
-.bg-footer-img{
-  background-image: url(./assets/img/footer-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 </style>
