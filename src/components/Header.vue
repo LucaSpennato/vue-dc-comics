@@ -9,7 +9,10 @@
             <li 
             v-for="(link, index) in DcComicsNavLinks"
             :key="index">
-                <a :href="link.url" >{{ link.text }}</a>
+                <a :href="link.url"
+                :class="{'active_el' : link.isActive === true }"
+                @click="navActiveOnClick(index)"
+                 >{{ link.text }}</a>
             </li>
         </ul>
 
@@ -28,42 +31,52 @@ export default {
                 {
                     text: 'characters',
                     url: '#',
+                    isActive: true,
                 },
                 {
                     text: 'comics',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'movies',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'tv',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'games',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'collectibles',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'videos',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'fans',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'news',
                     url: '#',
+                    isActive: false,
                 },
                 {
                     text: 'shop',
                     url: '#',
+                    isActive: false,
                 },
             ],
         };
@@ -71,6 +84,16 @@ export default {
     methods: {
         // TODO aggiungi prevent al click
         // TODO crea un hamb menu magari
+        navActiveOnClick: function(index){
+        
+            this.DcComicsNavLinks.forEach(element => {
+            element.isActive = false;
+            });
+
+            if(this.DcComicsNavLinks[index].isActive === false){
+                this.DcComicsNavLinks[index].isActive = true;
+            }
+        }
     },
 };
 </script>
