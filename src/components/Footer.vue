@@ -39,9 +39,10 @@
                     <li 
                     v-for="(iconLink, index) in footerIconLinks"
                     :key="index">
-                        <a :href="iconLink.url">
+                        <a :href="iconLink.url"
+                            target="_blank">
                             <img 
-                            :src="iconsPath(iconLink.icon)"
+                            :src="iconsPath(iconLink)"
                             :alt="iconLink.icon"/></a>
                     </li>
                 </ul>
@@ -198,30 +199,30 @@ export default {
            footerIconLinks: [
             {
                 icon: 'facebook',
-                url: '#',
+                url: 'https://www.facebook.com/dc/',
             },
             {
                 icon: 'twitter',
-                url: '#',
+                url: 'https://twitter.com/dccomics/',
             },
             {
                 icon: 'youtube',
-                url: '#',
+                url: 'https://www.youtube.com/channel/UCiifkYAs_bq1pt_zbNAzYGg',
             },
             {
                 icon: 'pinterest',
-                url: '#',
+                url: 'https://www.pinterest.it/dccomics/',
             },
             {
                 icon: 'periscope',
-                url: '#',
+                url: 'https://www.google.com/maps/place/Burbank,+California,+Stati+Uniti/@34.1820055,-118.3602306,13z/data=!3m1!4b1!4m5!3m4!1s0x80c295152818c595:0x307791af901f8ad4!8m2!3d34.1808392!4d-118.3089661',
             },
            ],
         };
     },
     methods: {
-        iconsPath: function (element){
-           return '../assets/img/footer-' + element + '.png';
+        iconsPath: function (array){
+           return require('../assets/img/footer-' + array.icon + '.png');
         }
     }    
 };
