@@ -1,5 +1,8 @@
 <template>
   <main>
+    <div class="hero">
+      <img src="../assets/img/jumbotron.jpg"  alt="">
+    </div>
     <div class="container">
       <div class="row col-10 m-auto py-5 gx-3">
           
@@ -109,5 +112,16 @@ export default {
         color: white;
         font-size: 1.5rem;
         background-color: $mainContentBgColor;
+
+        .hero{
+          height: 25rem;
+          
+            img{
+              object-fit: cover;
+              object-position: top;
+              width: 100%;
+              height: 100%;
+            }
+        } 
     }
 </style>
