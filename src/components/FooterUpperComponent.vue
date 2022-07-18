@@ -1,10 +1,10 @@
 <template>
   <section class="foot-upper-section">
     <div class="container">
-        <div class="row py-5 justify-content-center">
+        <div class="row py-5 justify-content-start justify-content-md-center">
 
             <div class="col-6 py-3 col-md-2 py-md-0"
-                    v-for="(link, index) in userShopSuggestions"
+                    v-for="(link, index) in Products"
                 :key="index">
                 <a :href="link.url" @click.prevent>
                     <img :src="imgsPath(link)" :alt="link.text">
@@ -22,7 +22,7 @@ export default {
     name: 'FootUpperSection',
     data(){
         return{
-            userShopSuggestions: 
+            Products: 
             [
                 {
                     text: 'digital comics',

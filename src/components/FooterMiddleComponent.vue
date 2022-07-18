@@ -1,21 +1,21 @@
 <template>
-      <section class="foot-top-section p-0 bg-footer-img">
+      <section class="foot-middle-section p-0 bg-footer-img">
 
         <div class="container">
 
           <div class="row">
 
-            <div class="row col-6 p-5">
+            <nav class="row col-12 col-lg-6 p-5">
 
                 <div class="col-4 d-inline"
                 v-for="(list, index) in footerNavLinks"
                 :key="index">
 
+                    <h5>{{ list.linksGroup }}</h5>
                     <ul>
-                        <h5>{{ list.linksGroup }}</h5>
 
-                        <li v-for="(link, index) in footerNavLinks[index].links"
-                        :key="index">
+                        <li v-for="(link, liElementIndex) in list.links"
+                        :key="liElementIndex">
                             <a :href="link.url"
                             @click.prevent>{{ link.text }}</a>
                         </li>
@@ -24,10 +24,10 @@
 
                 </div>
 
-            </div>
+            </nav>
 
             <!-- logo on right -->
-            <div class="col-6 bg-logo"></div>
+            <div class="col-lg-6 d-none d-lg-block bg-logo"></div>
             </div>
 
         </div>
@@ -86,31 +86,6 @@ export default {
                     ],
                 },
                 {
-                    linksGroup: 'sites',
-                    links: [
-                        {
-                            text: 'DC',
-                            url: '#',
-                        },
-                        {
-                            text: 'MAD magazine',
-                            url: '#',
-                        },
-                        {
-                            text: 'Dc kids',
-                            url: '#',
-                        },
-                        {
-                            text: 'DC universe',
-                            url: '#',
-                        },
-                        {
-                            text: 'DC power visa',
-                            url: '#',
-                        },
-                    ],
-                },
-                {
                     linksGroup: 'dc',
                     links: [
                         {
@@ -160,6 +135,31 @@ export default {
                         
                     ],
                 },
+                {
+                    linksGroup: 'sites',
+                    links: [
+                        {
+                            text: 'DC',
+                            url: '#',
+                        },
+                        {
+                            text: 'MAD magazine',
+                            url: '#',
+                        },
+                        {
+                            text: 'Dc kids',
+                            url: '#',
+                        },
+                        {
+                            text: 'DC universe',
+                            url: '#',
+                        },
+                        {
+                            text: 'DC power visa',
+                            url: '#',
+                        },
+                    ],
+                },
                 {    
                     linksGroup: 'shop',
                     links: [
@@ -185,37 +185,37 @@ export default {
 @import "../styles/variables.scss";
 
 .bg-footer-img {
-  background-image: url(../assets/img/footer-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+background-image: url(../assets/img/footer-bg.jpg);
+background-repeat: no-repeat;
+background-size: cover;
 }
 footer {
-  h5 {
-    color: white;
-    text-transform: uppercase;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  li {
-    line-height: 100%;
-  }
-  .foot-top-section li a {
-    text-decoration: none;
-    color: gray;
-    font-size: 0.7rem;
-    text-transform: capitalize;
-
-    &:hover {
-      color: $primaryColor;
+    h5 {
+        color: white;
+        text-transform: uppercase;
     }
-  }
-  .bg-logo {
-    background-image: url(../assets/img/dc-logo-bg.png);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    li {
+        line-height: 100%;
+    }
+    .foot-middle-section li a {
+        text-decoration: none;
+        color: gray;
+        font-size: 0.7rem;
+        text-transform: capitalize;
+
+        &:hover {
+        color: $primaryColor;
+        }
+    }
+    .bg-logo {
+        background-image: url(../assets/img/dc-logo-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 </style>

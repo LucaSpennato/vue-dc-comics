@@ -28,16 +28,17 @@
 
             <div class="col-12">
               <ul class="text-center">
-              <li
-              v-for="(link, index) in DcComicsNavLinks" 
-              :key="index"
-              class="d-block p-2">
-              <a class="p-0"
-                :href="link.url"
-                :class="{ active_side_el: link.isActive === true }"
-                @click.prevent="navActiveOnClick(index)"
-                >{{ link.text }}</a
-              >
+
+              <li v-for="(link, index) in DcComicsNavLinks" 
+                  :key="index"
+                  class="d-block p-2">
+
+                  <a class="p-0"
+                    :href="link.url"
+                    :class="{ active_side_el: link.isActive === true }"
+                    @click.prevent="navActiveOnClick(index)"
+                    >{{ link.text }}</a>
+                    
             </li>
           </ul>
             </div>
@@ -119,9 +120,8 @@ export default {
       this.DcComicsNavLinks.forEach((element) => {
         element.isActive = false;
       });
-      if (this.DcComicsNavLinks[index].isActive === false) {
-        this.DcComicsNavLinks[index].isActive = true;
-      }
+      console.log(index)
+      this.DcComicsNavLinks[index].isActive = true;
     },
   },
 };
