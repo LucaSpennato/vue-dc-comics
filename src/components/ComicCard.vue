@@ -5,6 +5,7 @@
         <h6 class="mt-2">
             {{ series }}
         </h6>
+        <div class="price">{{ price }}</div>
     </div>
 </template>
 
@@ -17,17 +18,32 @@ export default {
       type: {
         alt: String,
         required: true,
-      }
+      },
+      price: [String, Number],
     },
 }
 </script>
 
 <style lang="scss">
+@import "../styles/variables.scss";
 
 .comic{
-        height: 10rem;
+    position: relative;
+    height: 10rem;
+
+        &:hover .price{
+            display: block;
+        }
         h6{
             text-transform: uppercase;
+        }
+        .price{
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            font-weight: bold;
+            color: yellow;
+            display: none;
         }
         img{
             object-fit: cover;

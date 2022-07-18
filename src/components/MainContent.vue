@@ -10,6 +10,7 @@
         :thumb="comic.thumb"
         :series="comic.series" 
         :type="comic.type"
+        :price="comic.price"
         />
 
       </div>
