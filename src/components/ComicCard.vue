@@ -25,8 +25,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/variables.scss";
-
 .comic{
     position: relative;
     height: 10rem;
@@ -42,8 +40,10 @@ export default {
             top: 50%;
             left: 1rem;
             font-weight: bold;
-            color: yellow;
+            color: white;
             display: none;
+            background-color: rgba(0, 0, 0, .4);
+            border-radius: 5px;
         }
         img{
             object-fit: cover;

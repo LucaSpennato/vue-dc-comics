@@ -15,6 +15,10 @@
 
       </div>
 
+      <div class="text-center pb-5">
+        <button href="#" class="btn px-5 btn-primary rounded-0">Load More</button>
+      </div>
+
     </div>
 
   </main>
@@ -123,6 +127,9 @@ export default {
               width: 100%;
               height: 100%;
             }
-        } 
+        }
+      button{
+        text-transform: uppercase;
+      }
     }
 </style>
