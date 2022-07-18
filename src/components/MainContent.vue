@@ -6,7 +6,9 @@
     <div class="container">
       <div class="row col-10 m-auto py-5 gx-3">
           
-        <ComicCard v-for="(comic, index) in comics" :key="index"
+        <ComicCard 
+        v-for="(comic, index) in comics" :key="index"
+        
         :thumb="comic.thumb"
         :series="comic.series" 
         :type="comic.type"

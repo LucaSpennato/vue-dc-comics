@@ -11,7 +11,11 @@
                 v-for="(list, index) in footerNavLinks"
                 :key="index">
 
-                    <h5>{{ list.linksGroup }}</h5>
+                <FooterNavLinks 
+                :listName="list.linksGroup"
+                :links="list.links"
+                />
+                    <!-- <h5>{{ list.linksGroup }}</h5>
                     <ul>
 
                         <li v-for="(link, liElementIndex) in list.links"
@@ -20,7 +24,7 @@
                             @click.prevent>{{ link.text }}</a>
                         </li>
 
-                    </ul>
+                    </ul> -->
 
                 </div>
 
@@ -35,8 +39,12 @@
 </template>
 
 <script>
+import FooterNavLinks from './FooterNavLinks.vue';
 export default {
   name: "FooterContent",
+  components:{
+    FooterNavLinks,
+  },
   data(){
         return{
            footerNavLinks: [
@@ -190,18 +198,6 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 footer {
-    h5 {
-        color: white;
-        text-transform: uppercase;
-    }
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-    li {
-        line-height: 100%;
-    }
     .foot-middle-section li a {
         text-decoration: none;
         color: gray;
