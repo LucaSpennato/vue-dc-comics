@@ -3,13 +3,10 @@
     <div class="container">
       <div class="row col-10 m-auto py-5 gx-3">
           
-        <div class="comic my-5 col-2">
-          <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" 
-            alt="">
-            <div class="mt-2 fs-6">
-              Action comics
-            </div>
-        </div>
+        <ComicCard v-for="(comic, index) in comics" :key="index"
+        :thumb="comic.thumb"
+        :series="comic.series"
+        />
 
       </div>
 
@@ -19,8 +16,12 @@
 </template>
 
 <script>
+import ComicCard from './ComicCard.vue';
 export default {
     name:'MainContent',
+    components:{
+      ComicCard,
+    },
     data(){
       return{
 
@@ -108,16 +109,5 @@ export default {
         color: white;
         font-size: 1.5rem;
         background-color: $mainContentBgColor;
-
-        .comic{
-          height: 10rem;
-
-            img{
-              object-fit: cover;
-              object-position: top;
-              width: 100%;
-              height: 100%;
-            }
-        }
     }
 </style>
