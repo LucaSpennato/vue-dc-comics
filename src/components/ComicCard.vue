@@ -1,10 +1,10 @@
 <template>
   <div class="comic my-5 col-2">
         <img :src="thumb" 
-            alt="">
-        <div class="mt-2 fs-6">
+            :alt="type.alt">
+        <h6 class="mt-2">
             {{ series }}
-    </div>
+        </h6>
     </div>
 </template>
 
@@ -14,6 +14,10 @@ export default {
     props:{
       thumb: String,
       series: String,
+      type: {
+        alt: String,
+        required: true,
+      }
     },
 }
 </script>
@@ -22,6 +26,9 @@ export default {
 
 .comic{
         height: 10rem;
+        h6{
+            text-transform: uppercase;
+        }
         img{
             object-fit: cover;
             object-position: top;

@@ -1,14 +1,15 @@
 <template>
   <main>
     <div class="hero">
-      <img src="../assets/img/jumbotron.jpg"  alt="">
+      <img src="../assets/img/jumbotron.jpg"  alt="teen titans go jumbotron">
     </div>
     <div class="container">
       <div class="row col-10 m-auto py-5 gx-3">
           
         <ComicCard v-for="(comic, index) in comics" :key="index"
         :thumb="comic.thumb"
-        :series="comic.series"
+        :series="comic.series" 
+        :type="comic.type"
         />
 
       </div>
@@ -115,7 +116,6 @@ export default {
 
         .hero{
           height: 25rem;
-          
             img{
               object-fit: cover;
               object-position: top;
