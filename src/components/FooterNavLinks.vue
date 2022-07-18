@@ -11,10 +11,10 @@
 
 <script>
 export default {
-    name: 'link',
+    name: 'linkForFooter',
     props:{
         listName: String,
-        links: Object,
+        links: Array,
     },
 }
 </script>

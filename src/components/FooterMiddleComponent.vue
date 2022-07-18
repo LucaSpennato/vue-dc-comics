@@ -61,7 +61,7 @@ export default {
                         },
                         {
                             text: 'movies',
-                        url: '#',
+                            url: '#',
                         },
                         {
                             text: 'tv',
